@@ -16,7 +16,6 @@ class ProgressionStore:
         self.xp = 0
         self.played_before = False
         self.played_tutorial = False
-        self.num_unlocks = 0
         self.unlocks = []
         self.story_difficulty = [0, 0, 0, 0]
         self.story_chapters = [StoryChapter() for i in range(4)]
