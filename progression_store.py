@@ -28,9 +28,9 @@ class ProgressionStore:
             self.xp = struct.unpack('<i', progression_store.read(4))[0]
             self.played_before = struct.unpack('<?', progression_store.read(1))[0]
             self.played_tutorial = struct.unpack('<?', progression_store.read(1))[0]
-            self.num_unlocks = struct.unpack('<i', progression_store.read(4))[0]
-            self.unlocks = [Unlock() for i in range(self.num_unlocks)]
-            for i in range(self.num_unlocks):
+            num_unlocks = struct.unpack('<i', progression_store.read(4))[0]
+            self.unlocks = [Unlock() for i in range(num_unlocks)]
+            for i in range(num_unlocks):
                 self.unlocks[i].reward_id = struct.unpack('<i', progression_store.read(4))[0]
                 self.unlocks[i].is_unlocked = struct.unpack('<?', progression_store.read(1))[0]
                 self.unlocks[i].is_new = struct.unpack('<?', progression_store.read(1))[0]
